@@ -1,0 +1,13 @@
+input[type="text"] {
+    background-color:greenyellow ;
+    margin-bottom: 10px ;
+    width: 150px;
+}
+label{
+    font-weight: bolder;
+    font-size: large;
+}
+
+label[for="visitante"] {
+color: orangered;
+}
