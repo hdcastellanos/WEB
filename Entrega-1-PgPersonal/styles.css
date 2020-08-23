@@ -2,13 +2,8 @@
     font-family: 'Montserrat', sans-serif;   
 }
 
-
-
-
- 
-  
 #main {
-        position: relative;
+    position: relative;
 }
 
 #main .carousel-inner img {
@@ -20,7 +15,24 @@
 #carousel {
     position: relative;
 }
-  
+
+#carousel .carousel-item img {
+opacity: 0.8;
+}
+#carousel .carousel-item img:hover {
+    opacity: 1;
+}
+
+#main .pg-title{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif
+  }
+
+
 #Personal .container .iconos {
     display: flex;
     justify-content: center;
@@ -51,7 +63,7 @@
 }
 
 #projects .container .card-body .card-text  {
-   
+    
     font-family: 'Montserrat', sans-serif;
     color: black;
     
@@ -68,22 +80,23 @@
     justify-content: center;
 }
 #projects .container .card .card-image img{
-   object-fit: cover;
-   border-radius: 15px;
-   align-items: center;
-   max-height: 150px;
-   
+    object-fit: cover;
+    border-radius: 15px;
+    align-items: center;
+    max-height: 150px;
+    
 }
 
 #Interests .row .card{
     height: 100%;
     align-items: center;
+    width: 100%;
     
 }
 
 #Interests .container .card iframe,img{
     padding: 5px;
-
+    
 }
 
 #Academic .row .card{
@@ -93,8 +106,26 @@
     
 }
 
-.footer-copyright{
+#Academic .card .card-body .card-header img{
+    max-height: 100%;
+    max-width: 100%;
+    size: px;
+}
+
+.footer-copyright, .footer-copyright a  {
     color: white;
+    font-size: 75%;
+}
+.footer-copyright a  {
+    font-size: 100%;
+}
+
+.page-footer h5,.page-footer p, .page-footer a{
+    color: white;
+}
+
+.card-text{
+    font-family: 'Montserrat', sans-serif;
 }
 
 
