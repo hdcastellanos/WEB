@@ -1,0 +1,102 @@
+.navbar-brand, .nav-link{
+    font-family: 'Montserrat', sans-serif;   
+}
+
+
+
+
+ 
+  
+#main {
+        position: relative;
+}
+
+#main .carousel-inner img {
+    max-height: 85vh;
+    object-fit: cover;
+    
+}
+
+#carousel {
+    position: relative;
+}
+  
+#Personal .container .iconos {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#Personal .container .iconos img {
+    margin-top: 10px;
+    margin-right: 10px;
+    object-fit: cover;
+    height: 40px;
+}
+
+#Personal .container .card .card-body .card-text{
+    color: black;
+}
+
+
+#projects .row .card{
+    height: 100%;
+}
+
+#projects .container .card-body .card-title  {
+    color:black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+#projects .container .card-body .card-text  {
+   
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    
+}
+
+#projects .container .card  a:hover  {
+    color:white;
+    
+}
+
+#projects .container .card .card-image{
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+#projects .container .card .card-image img{
+   object-fit: cover;
+   border-radius: 15px;
+   align-items: center;
+   max-height: 150px;
+   
+}
+
+#Interests .row .card{
+    height: 100%;
+    align-items: center;
+    
+}
+
+#Interests .container .card iframe,img{
+    padding: 5px;
+
+}
+
+#Academic .row .card{
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.footer-copyright{
+    color: white;
+}
+
+
+
+
