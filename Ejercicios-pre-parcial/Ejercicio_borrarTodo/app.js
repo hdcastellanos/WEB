@@ -27,6 +27,8 @@ let jsonObject = [
     photo: "http://dummyimage.com/195x201.png/ff4444/ffffff",
   },
 ];
+
+let buttons = document.querySelectorAll("button");
 // inicializar tabla
 document.write(`<table  id = "tabla2" class="table-striped">
                  <tr>
@@ -35,6 +37,8 @@ document.write(`<table  id = "tabla2" class="table-striped">
                  <th id="Email">Email</th>
                  <th id="foto">Foto</th>
                  <th id="Eliminar">Eliminar</th>
+                 <th id="Actualizar">Actualizar</th>
+                 
                  </tr>`);
 let contador = 0;
 jsonObject.forEach((element) => {
@@ -45,7 +49,10 @@ jsonObject.forEach((element) => {
           <td id="F${contador}"><img src="${element.photo}" alt=""> </td>
           <td id="B${contador}">
       <button id="EliminarButton${contador}" type="button">Eliminar</button>
-    </td></tr>`);
+    </td>
+    <td id="BA${contador}">
+    <button id="ActualizarButton${contador}" type="button">Actualizar</button>
+  </td></tr>`);
   contador++;
 });
 document.write(`</table>
@@ -97,11 +104,14 @@ crearButton.addEventListener("click", function () {
       <button id="EliminarButton${
         jsonObject.length - 1
       }" type="button">Eliminar</button>
+    </td>  
+    <td id="BA${jsonObject.length - 1}">
+      <button id="ActualizarButton${
+        jsonObject.length - 1
+      }" type="button">Actualizar</button>
     </td>       
   
   </tr>`;
-  console.log(newRow);
-  console.log(tableRef);
 });
 
 // ordernar por nombre
@@ -227,19 +237,49 @@ function RestoreBackgroundColor(row) {
 
 //Eliminar fila
 
-let buttons = document.querySelectorAll("button");
-console.log(buttons);
+buttons = document.querySelectorAll("button");
 table = document.getElementById("tabla2");
-for (let i = 0; i < buttons.length - 2; i++) {
-  if (i + 1 === buttons.length) {
-    buttons[i].addEventListener("click", function () {
-      table.deleteRow(i);
+
+buttons = document.querySelectorAll("button");
+buttons.forEach((element) => {
+  buttons = document.querySelectorAll("button");
+  if (element.id.match(/EliminarB.*/)) {
+    element.addEventListener("click", function () {
+      element.parentElement.parentElement.remove();
     });
   }
-  buttons[i].addEventListener("click", function () {
-    table.deleteRow(i + 1);
-  });
-}
+});
+
+//actualizar fila
+buttons = document.querySelectorAll("button");
+buttons.forEach((element) => {
+  buttons = document.querySelectorAll("button");
+  if (element.id.match(/ActualizarB.*/)) {
+    element.addEventListener("click", function () {
+      let row = element.parentElement.parentElement;
+
+      let form = document.getElementById("actualizar");
+      let name = document.getElementById("Aname");
+      let last = document.getElementById("Alname");
+      let email = document.getElementById("AEmail");
+      let photo = document.getElementById("APhoto");
+      let ActButton = document.getElementById("ActButton");
+
+      name.value = row.children[0].innerText;
+      last.value = row.children[1].innerText;
+      email.value = row.children[2].innerText;
+      photo.value = row.children[3].children[0].src;
+      form.hidden = false;
+      ActButton.addEventListener("click", function () {
+        row.children[0].innerText = name.value;
+        row.children[1].innerText = last.value;
+        row.children[2].innerText = email.value;
+        row.children[3].children[0].src = photo.value;
+        form.hidden = true;
+      });
+    });
+  }
+});
 
 // eliminar todas las filas
 let elminarTodo = document.getElementById("EliminarTodo");
